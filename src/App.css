@@ -1,0 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+thead {
+  position: sticky;
+  top: 0px;
+  margin: 0 0 0 0;
+  z-index: 1;
+}
