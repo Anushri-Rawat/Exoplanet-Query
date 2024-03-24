@@ -9,24 +9,25 @@ function DataTable({ data }) {
       {
         columns,
         data,
+        disableSortRemove: true,
       },
       useSortBy
     );
 
   return (
-    <div className="w-full self-start bg-white rounded-md shadow-md h-full overflow-y-auto overflow-x-scroll md:overflow-x-hidden">
+    <div className="w-full self-start bg-white rounded-md shadow-md max-h-full overflow-y-auto overflow-x-scroll md:overflow-x-hidden">
       <table {...getTableProps()} className="w-full">
         <thead className="bg-white">
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
                 <th
-                  {...column.getHeaderProps(column.getSortByToggleProps())}
+                  {...column.getHeaderProps()}
                   className="p-4 border-b font-semibold uppercase text-center"
                 >
                   <div className="flex justify-center items-center">
                     {column.render("Header")}
-                    <span className="ml-1 flex items-center">
+                    {/* <span className="ml-1 flex items-center">
                       {column.isSorted ? (
                         column.isSortedDesc ? (
                           <FaArrowUp />
@@ -39,6 +40,28 @@ function DataTable({ data }) {
                           <FaArrowDown />
                         </>
                       )}
+                    </span> */}
+                    <span className="ml-1 flex items-center">
+                      <FaArrowUp
+                        className={`cursor-pointer ${
+                          column.isSorted && !column.isSortedDesc
+                            ? "text-blue-500"
+                            : ""
+                        }`}
+                        onClick={() => {
+                          column.toggleSortBy(false, true);
+                        }}
+                      />
+                      <FaArrowDown
+                        className={`cursor-pointer ${
+                          column.isSorted && column.isSortedDesc
+                            ? "text-blue-500"
+                            : ""
+                        }`}
+                        onClick={() => {
+                          column.toggleSortBy(true, false);
+                        }}
+                      />
                     </span>
                   </div>
                 </th>
@@ -60,7 +83,18 @@ function DataTable({ data }) {
                     }`}
                     key={cell.getCellProps().key}
                   >
-                    {cell.render("Cell")}
+                    {cell.column.id === "pl_name" ? (
+                      <a
+                        href={`https://exoplanetarchive.ipac.caltech.edu/overview//${cell.value}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline text-blue-500"
+                      >
+                        {cell.render("Cell")}
+                      </a>
+                    ) : (
+                      cell.render("Cell")
+                    )}
                   </td>
                 ))}
               </tr>
