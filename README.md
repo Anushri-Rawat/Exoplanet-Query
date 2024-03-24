@@ -1,8 +1,36 @@
-# React + Vite
+# Exoplanet Query Tool
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Deployed Link 
+  Visit : [https://exoplanet-query.vercel.app/](https://exoplanet-query.vercel.app/)
 
-Currently, two official plugins are available:
+## Features
+- **Query Input Panel:** Users can select query parameters such as discovery year, method, hostname, and discovery facility from dropdown menus.
+- **Search Functionality:** Users can search for exoplanets based on selected query parameters.
+- **Error Handling:** Error messages are displayed if no query parameters are selected before performing a search.
+- **Results Display:** Matching exoplanet data is displayed in a tabular format, with sortable columns and clickable hyperlinks for detailed information.
+- **Sorting:** Users can sort the results panel in ascending or descending order based on column values.
+- **Interactive Interface:** Icons are provided in column headers for intuitive sorting, enhancing user experience.
+- **Hyperlinks:** Hostnames in the results panel are clickable, redirecting users to NASA's Confirmed Planet Overview Page for detailed information.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Technologies & Packages Used
+- React JS
+- Vite
+- Tailwind CSS
+- react-toastify
+- react-table
+- react-select
+- react-window
+- react-icons
+
+## Installation and Usage
+
+### Installation
+
+1. ####  Clone the repository with this command : 
+      git clone https://github.com/Anushri-Rawat/Exoplanet-Query.git
+
+2. ####  Install Dependencies : 
+      npm install
+
+2. ####  Start the development server by running the following command : 
+      npm run dev
