@@ -1,6 +1,6 @@
 import React from "react";
 
-const NoResults = () => {
+const NoResult = () => {
   return (
           <div className="h-full w-full flex items-center justify-center">
             <div className="text-lg leading-1.5 tracking-tighter font-semibold flex flex-col items-center text-gray-500">
@@ -15,4 +15,4 @@ const NoResults = () => {
   );
 };
 
-export default NoResults;
+export default NoResult;

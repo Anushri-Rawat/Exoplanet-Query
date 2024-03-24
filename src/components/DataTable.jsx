@@ -1,6 +1,6 @@
 import React from "react";
 import { useTable, useSortBy } from "react-table";
-import columns from "../utlis/columns";
+import columns from "../utils/columns";
 import { FaArrowUp, FaArrowDown } from "react-icons/fa";
 
 function DataTable({ data }) {
